@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render RemoveExpenseModal correctly 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={100}
+  contentLabel="Confirmation"
+  isOpen={false}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnOverlayClick={true}
+>
+  <p
+    className="modal__body"
+  >
+    Do you want to delete this expense?
+  </p>
+  <div
+    className="modal__button-bar"
+  >
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      Yes
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      No
+    </button>
+  </div>
+</Modal>
+`;

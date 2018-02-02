@@ -28,10 +28,20 @@ test('should handle startEditExpense', () => {
 	expect(startEditExpense).toHaveBeenLastCalledWith(expenses[2].id, expenses[2]);
 });
 
-test('should hanlde startRemoveExpense', () => {
+test('should set showRemoveExpenseModal when click remove expense button', () => {
 	wrapper.find('button').simulate('click');
+	expect(wrapper.state('showRemoveExpenseModal')).toBe(true);
+});
+
+test('should hanlde startRemoveExpense', () => {
+	wrapper.find('RemoveExpenseModal').prop('handleRemoveExpense')();
 	expect(history.push).toHaveBeenLastCalledWith('/');
-	expect(startRemoveExpense).toHaveBeenLastCalledWith({ 
-		id: expenses[2].id 
+	expect(startRemoveExpense).toHaveBeenLastCalledWith({
+		id: expenses[2].id
 	});
+});
+
+test('should hanlde cancel remove expense', () => {
+	wrapper.find('RemoveExpenseModal').prop('hanldeCancelRemoveExpense')();
+	expect(wrapper.state('showRemoveExpenseModal')).toBe(false);
 });
