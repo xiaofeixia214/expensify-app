@@ -12,9 +12,14 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, googleAuthProvider, database as default };
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+googleAuthProvider.setCustomParameters({
+	'prompt': 'select_account'
+});
+const githubAuthProvider = new firebase.auth.GithubAuthProvider();
+
+export { firebase, googleAuthProvider, githubAuthProvider, database as default };
 
 
 
